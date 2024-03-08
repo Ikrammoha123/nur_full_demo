@@ -1,0 +1,153 @@
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+}
+.container {
+  padding: 0 5px;
+}
+/* navigation */
+.main-menu {
+  display: none !important;
+}
+.btn-bars {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 4;
+}
+/* toggleing sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 0px;
+  height: 100vh;
+  background: #f4f4f4;
+  transition: all 0.53s ease;
+  position: absolute;
+  right: 0px;
+  top: 0;
+  z-index: 3;
+  overflow: hidden;
+  padding-top: 70px;
+}
+
+.sidebar.open {
+  width: 50%;
+  right: 0;
+  overflow: hidden;
+}
+.sidebar li {
+  display: block;
+  margin: 5px 30px;
+  border-bottom: 1px solid var(--primary-color);
+}
+.sidebar li:last-child {
+  border: none;
+}
+.sidebar li a {
+  margin: 0;
+  display: block;
+  width: 100%;
+}
+.sidebar li a:hover {
+  border: none !important;
+}
+
+/* main-nav */
+#main-nav .container {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+#main-nav .container #side-menu {
+  justify-self: end;
+}
+
+.btn-bars {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+}
+
+/* hidden */
+.hidden {
+  display: none;
+}
+.nav-search-list {
+  display: none;
+}
+/* showcase */
+#showcase {
+  padding: 10px;
+}
+/* articel */
+.card {
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: minmax(200px, auto) 1fr;
+}
+
+.card-content {
+  width: 95%;
+  border-radius: 10px;
+}
+
+#home-article .article-container {
+  grid-template-columns: 1fr;
+}
+
+#home-article .article-container .article-content {
+  grid-template-columns: 1fr;
+  padding-left: 0;
+}
+
+#home-article .article-container > *:first-child {
+  grid-column: 1;
+}
+
+#home-article .article-container .article-content > div {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+#blog .grid-item {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+/* media */
+@media (max-width: 600px) {
+  .card-content {
+    margin: 10px;
+    width: auto;
+    border-radius: 10px;
+  }
+  #showcase .showcase-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #main-footer .footer-conainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  #main-footer .footer-conainer > *:last-child {
+    grid-column: 1;
+  }
+
+  .page-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 1rem;
+    gap: 1.5rem;
+  }
+  .page-container > *:first-child {
+    grid-row: 1;
+  }
+  .dots {
+    bottom: 1%;
+    left: 50%;
+  }
+  .dots-dot {
+    height: 0.5rem;
+    width: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
